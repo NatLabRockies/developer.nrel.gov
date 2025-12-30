@@ -141,7 +141,7 @@ GEM
       concurrent-ruby (~> 1.0)
     uglifier (4.2.1)
       execjs (>= 0.3.0, < 3)
-    uri (1.0.3)
+    uri (1.0.4)
     vite_padrino (3.0.0)
       vite_ruby (~> 3.0)
     vite_ruby (3.9.2)
