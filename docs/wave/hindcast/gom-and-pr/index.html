@@ -376,7 +376,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <h3 id="json-output-format">JSON Output Format</h3>
 
-<div class="doc-example-url"><code>GET /api/wave/v2/wave/us-wave-v1-0-0-gom-and-pr-download.json?email=paul.edwards@nrel.gov&amp;wkt=POINT(-67.97 17.62)&amp;attributes=direction_of_maximum_directionally_resolved_wave_power&amp;names=2019,2020&amp;interval=180</code></div>
+<div class="doc-example-url"><code>GET /api/wave/v2/wave/us-wave-v1-0-0-gom-and-pr-download.json?email=user@company.com&amp;wkt=POINT(-67.97 17.62)&amp;attributes=direction_of_maximum_directionally_resolved_wave_power&amp;names=2019,2020&amp;interval=180</code></div>
 
 <div class="highlight"><pre class="highlight plaintext"><code>{
     "inputs": {
@@ -385,7 +385,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             "0": ".json"
         },
         "query": {
-            "email": "paul.edwards@nrel.gov",
+            "email": "user@company.com",
             "wkt": "POINT(-67.97 17.62)",
             "attributes": "direction_of_maximum_directionally_resolved_wave_power",
             "names": "2019,2020",
@@ -400,7 +400,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     },
     "status": 200,
     "outputs": {
-        "message": "File generation in progress. An email will be sent to paul.edwards@nrel.gov when the download is ready.",
+        "message": "File generation in progress. An email will be sent to user@company.com when the download is ready.",
         "downloadUrl": "https://mapfiles.nrel.gov/data/wave/7c1320137c7c8f98e96af4781903419f.zip"
     },
     "errors": []
@@ -409,7 +409,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h3 id="csv-output-format">CSV Output Format</h3>
 <p>Direct streaming of CSV data is supported for single location, single year only. The following response example is truncated after the first few rows of data.</p>
 
-<div class="doc-example-url"><code>GET /api/wave/v2/wave/us-wave-v1-0-0-gom-and-pr-download.csv?email=paul.edwards@nrel.gov&amp;wkt=POINT(-67.97 17.62)&amp;attributes=energy_period,spectral_width&amp;names=2020&amp;interval=180</code></div>
+<div class="doc-example-url"><code>GET /api/wave/v2/wave/us-wave-v1-0-0-gom-and-pr-download.csv?email=user@company.com&amp;wkt=POINT(-67.97 17.62)&amp;attributes=energy_period,spectral_width&amp;names=2020&amp;interval=180</code></div>
 
 <div class="highlight"><pre class="highlight plaintext"><code>Source,Location ID,Jurisdiction,Latitude,Longitude,Time Zone,Local Time Zone,Distance to Shore,Water Depth,Direction of Maximum Directionally Resolved Wave Power,Directionality Coefficient,Energy Period,Mean Absolute Period,Mean Wave Direction,Mean Zero-Crossing Period,Omnidirectional Wave Power,Peak Period,Peak Wave Direction,Significant Wave Height,Spectral Width,Version
 DOE-WPTO US Wave dataset,3586863,b'Federal',,,0,,48960.945,,deg,-,s,s,deg,s,W/m,s,deg,m,-,v1.0.0
@@ -426,7 +426,7 @@ Year,Month,Day,Hour,Minute,Energy Period,Spectral Width
 
 <span class="n">url</span> <span class="o">=</span> <span class="s">"http://developer.nrel.gov/api/wave/v2/wave/us-wave-v1-0-0-gom-and-pr-download.json?api_key=yourapikeygoeshere"</span>
 
-<span class="n">payload</span> <span class="o">=</span> <span class="s">"api_key={{API_KEY}}&amp;email=paul.edwards@nrel.gov&amp;wkt=POINT(-67.97 17.62)&amp;attributes=energy_period,spectral_width&amp;names=2020&amp;interval=180"</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="s">"api_key={{API_KEY}}&amp;email=user@company.com&amp;wkt=POINT(-67.97 17.62)&amp;attributes=energy_period,spectral_width&amp;names=2020&amp;interval=180"</span>
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">'content-type'</span><span class="p">:</span> <span class="s">"application/x-www-form-urlencoded"</span><span class="p">,</span>
