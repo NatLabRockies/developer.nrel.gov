@@ -208,7 +208,7 @@ Examples may not reflect the full range of possible options for this dataset.
 
 ### JSON Output Format
 
-<div class="doc-example-url"><code>GET <%= current_page.data.url %>.json?email=paul.edwards@nrel.gov&wkt=POINT(-67.97 17.62)&attributes=direction_of_maximum_directionally_resolved_wave_power&names=2019,2020&interval=180</code></div>
+<div class="doc-example-url"><code>GET <%= current_page.data.url %>.json?email=user@company.com&wkt=POINT(-67.97 17.62)&attributes=direction_of_maximum_directionally_resolved_wave_power&names=2019,2020&interval=180</code></div>
 
 ```JSON
 {
@@ -218,7 +218,7 @@ Examples may not reflect the full range of possible options for this dataset.
             "0": ".json"
         },
         "query": {
-            "email": "paul.edwards@nrel.gov",
+            "email": "user@company.com",
             "wkt": "POINT(-67.97 17.62)",
             "attributes": "direction_of_maximum_directionally_resolved_wave_power",
             "names": "2019,2020",
@@ -233,7 +233,7 @@ Examples may not reflect the full range of possible options for this dataset.
     },
     "status": 200,
     "outputs": {
-        "message": "File generation in progress. An email will be sent to paul.edwards@nrel.gov when the download is ready.",
+        "message": "File generation in progress. An email will be sent to user@company.com when the download is ready.",
         "downloadUrl": "https://mapfiles.nrel.gov/data/wave/7c1320137c7c8f98e96af4781903419f.zip"
     },
     "errors": []
@@ -243,7 +243,7 @@ Examples may not reflect the full range of possible options for this dataset.
 ### CSV Output Format
 Direct streaming of CSV data is supported for single location, single year only. The following response example is truncated after the first few rows of data.
 
-<div class="doc-example-url"><code>GET <%= current_page.data.url %>.csv?email=paul.edwards@nrel.gov&wkt=POINT(-67.97 17.62)&attributes=energy_period,spectral_width&names=2020&interval=180</code></div>
+<div class="doc-example-url"><code>GET <%= current_page.data.url %>.csv?email=user@company.com&wkt=POINT(-67.97 17.62)&attributes=energy_period,spectral_width&names=2020&interval=180</code></div>
 
 ```csv
 Source,Location ID,Jurisdiction,Latitude,Longitude,Time Zone,Local Time Zone,Distance to Shore,Water Depth,Direction of Maximum Directionally Resolved Wave Power,Directionality Coefficient,Energy Period,Mean Absolute Period,Mean Wave Direction,Mean Zero-Crossing Period,Omnidirectional Wave Power,Peak Period,Peak Wave Direction,Significant Wave Height,Spectral Width,Version
@@ -263,7 +263,7 @@ import requests
 
 url = "http://developer.nrel.gov<%= current_page.data.url %>.json?api_key=yourapikeygoeshere"
 
-payload = "api_key={{API_KEY}}&email=paul.edwards@nrel.gov&wkt=POINT(-67.97 17.62)&attributes=energy_period,spectral_width&names=2020&interval=180"
+payload = "api_key={{API_KEY}}&email=user@company.com&wkt=POINT(-67.97 17.62)&attributes=energy_period,spectral_width&names=2020&interval=180"
 
 headers = {
     'content-type': "application/x-www-form-urlencoded",
