@@ -208,7 +208,7 @@ Examples may not reflect this specific dataset.
 
 ### JSON Output Format
 
-<div class="doc-example-url"><code>GET <%= current_page.data.url %>.json?api_key={{API_KEY}}email=datalovr@nrel.gov&wkt=POINT(145.6704112711147+16.32973014436503)&attributes=directionality_coefficient,energy_period,maximum_energy_direction,mean_absolute_period,mean_wave_direction,omni-directional_wave_power,peak_period,significant_wave_height,spectral_width&names=2018,2019,2020&interval=180</code></div>
+<div class="doc-example-url"><code>GET <%= current_page.data.url %>.json?api_key={{API_KEY}}email=datalovr@nlr.gov&wkt=POINT(145.6704112711147+16.32973014436503)&attributes=directionality_coefficient,energy_period,maximum_energy_direction,mean_absolute_period,mean_wave_direction,omni-directional_wave_power,peak_period,significant_wave_height,spectral_width&names=2018,2019,2020&interval=180</code></div>
 
 ```JSON
 {
@@ -218,7 +218,7 @@ Examples may not reflect this specific dataset.
             "0": ".json"
         },
         "query": {
-            "email": "datalovr@nrel.gov",
+            "email": "datalovr@nlr.gov",
             "wkt": "POINT(145.6704112711147 16.32973014436503)",
             "attributes": "directionality_coefficient,energy_period,maximum_energy_direction,mean_absolute_period,mean_wave_direction,omni-directional_wave_power,peak_period,significant_wave_height,spectral_width",
             "names": "2018,2019,2020",
@@ -243,7 +243,7 @@ Examples may not reflect this specific dataset.
 ### CSV Output Format
 Direct streaming of CSV data is supported for single location, single year only. The following response example is truncated after the first few rows of data.
 
-<div class="doc-example-url"><code>GET <%= current_page.data.url %>.csv?api_key={{API_KEY}}&email=datalovr@nrel.gov&wkt=POINT(145.6704112711147+16.32973014436503)&attributes=directionality_coefficient,energy_period,maximum_energy_direction,mean_absolute_period,mean_wave_direction,omni-directional_wave_power,peak_period,significant_wave_height,spectral_width&names=2020&interval=180</code></div>
+<div class="doc-example-url"><code>GET <%= current_page.data.url %>.csv?api_key={{API_KEY}}&email=datalovr@nlr.gov&wkt=POINT(145.6704112711147+16.32973014436503)&attributes=directionality_coefficient,energy_period,maximum_energy_direction,mean_absolute_period,mean_wave_direction,omni-directional_wave_power,peak_period,significant_wave_height,spectral_width&names=2020&interval=180</code></div>
 
 ```csv
 Source,Location ID,Jurisdiction,Latitude,Longitude,Time Zone,Local Time Zone,Distance to Shore,Directionality Coefficient,Energy Period,Maximum Energy Direction,Mean Absolute Period,Mean Wave Direction,Mean Zero-Crossing Period,Wave Power,Peak Period,Significant Wave Height,Spectral Width,Water Depth,Version
@@ -267,7 +267,7 @@ import requests
 
 url = "http://developer.nrel.gov<%= current_page.data.url %>.json?api_key=yourapikeygoeshere"
 
-payload = "api_key={{API_KEY}}&email=datalovr@nrel.gov&wkt=POINT(145.6704112711147+16.32973014436503)&attributes=directionality_coefficient,energy_period,maximum_energy_direction,mean_absolute_period,mean_wave_direction,omni-directional_wave_power,peak_period,significant_wave_height,spectral_width&names=2020&interval=180"
+payload = "api_key={{API_KEY}}&email=datalovr@nlr.gov&wkt=POINT(145.6704112711147+16.32973014436503)&attributes=directionality_coefficient,energy_period,maximum_energy_direction,mean_absolute_period,mean_wave_direction,omni-directional_wave_power,peak_period,significant_wave_height,spectral_width&names=2020&interval=180"
 
 headers = {
     'content-type': "application/x-www-form-urlencoded",
@@ -293,7 +293,7 @@ For some tips and tricks to maximize data downloads please read the guide [here]
 
 <h2 id="contacts">Contact</h2>
 
-<p>For questions about the API or the data models please contact <a href="mailto:marineresource@nrel.gov">marineresource@nrel.gov</a></p>
+<p>For questions about the API or the data models please contact <a href="mailto:marineresource@nlr.gov">marineresource@nlr.gov</a></p>
 
 <h2 id="errors">Errors</h2>
 
