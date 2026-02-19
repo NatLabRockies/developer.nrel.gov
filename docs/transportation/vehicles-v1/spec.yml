@@ -745,7 +745,6 @@ parameters:
     type: string
     enum:
       - json
-      - xml
       - csv
   OutputFormatNoCSV:
     in: path
@@ -755,7 +754,6 @@ parameters:
     type: string
     enum:
       - json
-      - xml
   ApiKey:
     in: query
     description: API key
