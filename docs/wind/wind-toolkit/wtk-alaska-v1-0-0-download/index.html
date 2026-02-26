@@ -10,7 +10,7 @@
       NLR: Developer Network
     </title>
 
-    <link rel="canonical" href="https://developer.nrel.gov/docs/wind/wind-toolkit/wtk-alaska-v1-0-0-download/" />
+    <link rel="canonical" href="https://developer.nlr.gov/docs/wind/wind-toolkit/wtk-alaska-v1-0-0-download/" />
 
     <link href="/vite/assets/a-entrypoints/all-C0pq5lFi.css" rel="stylesheet" />
     <!-- Google Tag Manager -->
@@ -424,7 +424,7 @@ Year,Month,Day,Hour,Minute,wind direction at 180m (deg)
 
 <div class="highlight"><pre class="highlight python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://developer.nrel.gov/api/wind-toolkit/v2/wind/wtk-alaska-v1-0-0-download.json?api_key=yourapikeygoeshere"</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"https://developer.nlr.gov/api/wind-toolkit/v2/wind/wtk-alaska-v1-0-0-download.json?api_key=yourapikeygoeshere"</span>
 
 <span class="n">payload</span> <span class="o">=</span> <span class="s">"api_key={{API_KEY}}&amp;attributes=winddirection_180m&amp;names=2017&amp;utc=true&amp;leap_day=true&amp;interval=60&amp;email=user@company.com&amp;wkt=POINT(-179.99 -15.94)"</span>
 
@@ -439,7 +439,7 @@ Year,Month,Day,Hour,Minute,wind direction at 180m (deg)
 </code></pre></div>
 <h2 id="rate-limits">Rate Limits</h2>
 
-<p>Rate limits for this application are significantly less than the <a href="/docs/rate-limits" target="_blank">standard rate limits</a> for developer.nrel.gov. This decrease in the limit is required as the data provided through this service is significantly more computationally intensive to generate and provide. These rate limits are carefully calculated to allow all users the maximum throughput that our servers can sustain.</p>
+<p>Rate limits for this application are significantly less than the <a href="/docs/rate-limits" target="_blank">standard rate limits</a> for developer.nlr.gov. This decrease in the limit is required as the data provided through this service is significantly more computationally intensive to generate and provide. These rate limits are carefully calculated to allow all users the maximum throughput that our servers can sustain.</p>
 
 <p>There are several levels of rate limiting for this service. The first limit determines how many requests a given user can make per 24 hour period. For requests utilizing the <em>.csv</em> format this rate limit is set at 10,000 a day at a frequency of no more than 1 per second. For all other requests this limit is set at 2000 requests per day at a frequency of no more than 1 every 2 seconds.</p>
 
@@ -528,7 +528,7 @@ Year,Month,Day,Hour,Minute,wind direction at 180m (deg)
             </div>
             <div class="col-sm-6 col-lg-3">
 
-              <div class="mt-3 mt-sm-0"><a href="https://developer.nrel.gov">Developers</a></div>
+              <div class="mt-3 mt-sm-0"><a href="https://developer.nlr.gov">Developers</a></div>
               <div class="mt-3 mt-sm-2"><a href="https://thesource.nrel.gov">Employees</a></div>
             </div>
           </div>

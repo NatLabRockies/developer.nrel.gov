@@ -9,7 +9,7 @@
       NLR: Developer Network
     </title>
 
-    <link rel="canonical" href="https://developer.nrel.gov/docs/energy-optimization/rede-technical-potential/" />
+    <link rel="canonical" href="https://developer.nlr.gov/docs/energy-optimization/rede-technical-potential/" />
 
     <link href="/vite/assets/a-entrypoints/all-C0pq5lFi.css" rel="stylesheet" />
     <!-- Google Tag Manager -->
@@ -192,7 +192,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div>
         <p>
             The REDE Technical Potential API provides a total of two endpoints, hosted from the base
-            <em>developer.nrel.gov/api/opencarto/rede/</em>.
+            <em>developer.nlr.gov/api/opencarto/rede/</em>.
 
             <div>
                 <br /><b><em>v1/technical-potential/config</em></b><br />
@@ -209,8 +209,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </ul>
 
                         Examples:
-                        <pre><code>GET <em> https://developer.nrel.gov/api/opencarto/rede/v1/technical-potential/config?countries=Indonesia,Bangladesh&amp;api_key={key}</em></code></pre>
-                        <pre><code>GET <em> https://developer.nrel.gov/api/opencarto/rede/v1/technical-potential/config?wkt=POINT(77.216 28.644)&amp;api_key={key}</em></code></pre>
+                        <pre><code>GET <em> https://developer.nlr.gov/api/opencarto/rede/v1/technical-potential/config?countries=Indonesia,Bangladesh&amp;api_key={key}</em></code></pre>
+                        <pre><code>GET <em> https://developer.nlr.gov/api/opencarto/rede/v1/technical-potential/config?wkt=POINT(77.216 28.644)&amp;api_key={key}</em></code></pre>
                     </div>
                 </div>
             </div>
@@ -237,7 +237,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </ul>
 
                         Example:
-                        <pre><code>GET <em> https://developer.nrel.gov/api/opencarto/rede/v1/technical-potential?jobId=tpot_result_singapore_2251&amp;api_key={key}</em></code></pre>
+                        <pre><code>GET <em> https://developer.nlr.gov/api/opencarto/rede/v1/technical-potential?jobId=tpot_result_singapore_2251&amp;api_key={key}</em></code></pre>
                         <br />
                         <b><em>DELETE</em></b><br />
                         Destroys the database and mapping assets created by an analysis job. The job summary data is
@@ -248,7 +248,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </ul>
 
                         Example:
-                        <pre><code>DELETE <em> https://developer.nrel.gov/api/opencarto/rede/v1/technical-potential?jobId=tpot_result_singapore_2251&amp;api_key={key}</em></code></pre>
+                        <pre><code>DELETE <em> https://developer.nlr.gov/api/opencarto/rede/v1/technical-potential?jobId=tpot_result_singapore_2251&amp;api_key={key}</em></code></pre>
                     </div>
                 </div>
             </div>
@@ -283,14 +283,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <b>Loading Scenario Configuration for Location</b><br />
         <div class="row">
             <div class="col-11 offset-1">
-                <pre><code>GET <em> https://developer.nrel.gov/api/opencarto/rede/v1/technical-potential/config?wkt=POINT(77.216 28.644)&amp;api_key={key}</em></code></pre>
+                <pre><code>GET <em> https://developer.nlr.gov/api/opencarto/rede/v1/technical-potential/config?wkt=POINT(77.216 28.644)&amp;api_key={key}</em></code></pre>
             </div>
         </div>
         <br />
         <b>Creating an Analysis Job</b><br />
         <div class="row">
             <div class="col-11 offset-1">
-                <pre><code>POST <em> https://developer.nrel.gov/api/opencarto/rede/v1/technical-potential?api_key={key}</em>
+                <pre><code>POST <em> https://developer.nlr.gov/api/opencarto/rede/v1/technical-potential?api_key={key}</em>
 
     -data {"region": "6", "resource": "32", "excludeProtectedAreas": "true", ...}</code></pre>
             </div>
@@ -301,7 +301,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <b>Checking Results</b><br />
         <div class="row">
             <div class="col-11 offset-1">
-                <pre><code>GET <em> https://developer.nrel.gov/api/opencarto/rede/v1/technical-potential?jobId={thejobid}&amp;api_key={key}</em></code></pre>
+                <pre><code>GET <em> https://developer.nlr.gov/api/opencarto/rede/v1/technical-potential?jobId={thejobid}&amp;api_key={key}</em></code></pre>
             </div>
         </div>
     </div>
@@ -1613,7 +1613,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             the jobId for which to retrieve results.</p>
         <div class="row">
             <div class="col-11 offset-1">
-                <pre>GET https://developer.nrel.gov/api/opencarto/rede/v1/technical-potential?jobId=tpot_result_india_3513&amp;api_key={key}</pre>
+                <pre>GET https://developer.nlr.gov/api/opencarto/rede/v1/technical-potential?jobId=tpot_result_india_3513&amp;api_key={key}</pre>
             </div>
         </div>
     </div>
@@ -1847,7 +1847,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <pre>
         <code>
 curl -X POST \
-  https://developer.nrel.gov/api/opencarto/rede/v1/technical-potential?api_key={KEY} \
+  https://developer.nlr.gov/api/opencarto/rede/v1/technical-potential?api_key={KEY} \
   -H 'Content-Type: application/json' \
   -H 'Pragma: no-cache' \
   -H 'cache-control: no-cache' \
@@ -1942,7 +1942,7 @@ curl -X POST \
             </div>
             <div class="col-sm-6 col-lg-3">
 
-              <div class="mt-3 mt-sm-0"><a href="https://developer.nrel.gov">Developers</a></div>
+              <div class="mt-3 mt-sm-0"><a href="https://developer.nlr.gov">Developers</a></div>
               <div class="mt-3 mt-sm-2"><a href="https://thesource.nrel.gov">Employees</a></div>
             </div>
           </div>
