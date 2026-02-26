@@ -28,7 +28,7 @@ deprecated: true
     <div>
         <p>
             The REDE Technical Potential API provides a total of two endpoints, hosted from the base
-            <em>developer.nrel.gov/api/opencarto/rede/</em>.
+            <em>developer.nlr.gov/api/opencarto/rede/</em>.
 
             <div>
                 <br><b><em>v1/technical-potential/config</em></b><br>
@@ -45,8 +45,8 @@ deprecated: true
                         </ul>
 
                         Examples:
-                        <pre><code>GET <em> https://developer.nrel.gov/api/opencarto/rede/v1/technical-potential/config?countries=Indonesia,Bangladesh&api_key={key}</em></code></pre>
-                        <pre><code>GET <em> https://developer.nrel.gov/api/opencarto/rede/v1/technical-potential/config?wkt=POINT(77.216 28.644)&api_key={key}</em></code></pre>
+                        <pre><code>GET <em> https://developer.nlr.gov/api/opencarto/rede/v1/technical-potential/config?countries=Indonesia,Bangladesh&api_key={key}</em></code></pre>
+                        <pre><code>GET <em> https://developer.nlr.gov/api/opencarto/rede/v1/technical-potential/config?wkt=POINT(77.216 28.644)&api_key={key}</em></code></pre>
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@ deprecated: true
                         </ul>
 
                         Example:
-                        <pre><code>GET <em> https://developer.nrel.gov/api/opencarto/rede/v1/technical-potential?jobId=tpot_result_singapore_2251&api_key={key}</em></code></pre>
+                        <pre><code>GET <em> https://developer.nlr.gov/api/opencarto/rede/v1/technical-potential?jobId=tpot_result_singapore_2251&api_key={key}</em></code></pre>
                         <br>
                         <b><em>DELETE</em></b><br>
                         Destroys the database and mapping assets created by an analysis job. The job summary data is
@@ -84,7 +84,7 @@ deprecated: true
                         </ul>
 
                         Example:
-                        <pre><code>DELETE <em> https://developer.nrel.gov/api/opencarto/rede/v1/technical-potential?jobId=tpot_result_singapore_2251&api_key={key}</em></code></pre>
+                        <pre><code>DELETE <em> https://developer.nlr.gov/api/opencarto/rede/v1/technical-potential?jobId=tpot_result_singapore_2251&api_key={key}</em></code></pre>
                     </div>
                 </div>
             </div>
@@ -119,14 +119,14 @@ deprecated: true
         <b>Loading Scenario Configuration for Location</b><br>
         <div class="row">
             <div class="col-11 offset-1">
-                <pre><code>GET <em> https://developer.nrel.gov/api/opencarto/rede/v1/technical-potential/config?wkt=POINT(77.216 28.644)&api_key={key}</em></code></pre>
+                <pre><code>GET <em> https://developer.nlr.gov/api/opencarto/rede/v1/technical-potential/config?wkt=POINT(77.216 28.644)&api_key={key}</em></code></pre>
             </div>
         </div>
         <br>
         <b>Creating an Analysis Job</b><br>
         <div class="row">
             <div class="col-11 offset-1">
-                <pre><code>POST <em> https://developer.nrel.gov/api/opencarto/rede/v1/technical-potential?api_key={key}</em>
+                <pre><code>POST <em> https://developer.nlr.gov/api/opencarto/rede/v1/technical-potential?api_key={key}</em>
 
     -data {"region": "6", "resource": "32", "excludeProtectedAreas": "true", ...}</code></pre>
             </div>
@@ -137,7 +137,7 @@ deprecated: true
         <b>Checking Results</b><br>
         <div class="row">
             <div class="col-11 offset-1">
-                <pre><code>GET <em> https://developer.nrel.gov/api/opencarto/rede/v1/technical-potential?jobId={thejobid}&api_key={key}</em></code></pre>
+                <pre><code>GET <em> https://developer.nlr.gov/api/opencarto/rede/v1/technical-potential?jobId={thejobid}&api_key={key}</em></code></pre>
             </div>
         </div>
     </div>
@@ -1450,7 +1450,7 @@ deprecated: true
             the jobId for which to retrieve results.</p>
         <div class="row">
             <div class="col-11 offset-1">
-                <pre>GET https://developer.nrel.gov/api/opencarto/rede/v1/technical-potential?jobId=tpot_result_india_3513&api_key={key}</pre>
+                <pre>GET https://developer.nlr.gov/api/opencarto/rede/v1/technical-potential?jobId=tpot_result_india_3513&api_key={key}</pre>
             </div>
         </div>
     </div>
@@ -1684,7 +1684,7 @@ deprecated: true
     <pre>
         <code>
 curl -X POST \
-  https://developer.nrel.gov/api/opencarto/rede/v1/technical-potential?api_key={KEY} \
+  https://developer.nlr.gov/api/opencarto/rede/v1/technical-potential?api_key={KEY} \
   -H 'Content-Type: application/json' \
   -H 'Pragma: no-cache' \
   -H 'cache-control: no-cache' \

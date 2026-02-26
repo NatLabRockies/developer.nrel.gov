@@ -14,7 +14,7 @@ info:
     - `/train_simulation`: Simulate a train running over a single route..
 
 servers:
-  - url: https://developer.nrel.gov/api/altrios
+  - url: https://developer.nlr.gov/api/altrios
 paths:
   /train_simulation:
     post:
