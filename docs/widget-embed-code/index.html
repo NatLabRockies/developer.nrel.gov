@@ -4,13 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
-        Data Download Guide
-          API
+        Updating Embed Code for NLR.gov Widgets
         |
       NLR: Developer Network
     </title>
 
-    <link rel="canonical" href="https://developer.nlr.gov/docs/wave/guide/" />
+    <link rel="canonical" href="https://developer.nlr.gov/docs/widget-embed-code/" />
 
     <link href="/vite/assets/a-entrypoints/all-C0pq5lFi.css" rel="stylesheet" />
     <!-- Google Tag Manager -->
@@ -30,7 +29,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="apple-touch-icon" sizes="114x114" href="/vite/assets/a-touch-icon-iphone-retina-CZo0JGSQ.png">
     <link rel="apple-touch-icon" sizes="144x144" href="/vite/assets/a-touch-icon-ipad-retina-DCfTusX0.png">
   </head>
-  <body class="docs docs_wave docs_wave_guide docs_wave_guide_index">
+  <body class="docs docs_widget-embed-code docs_widget-embed-code_index">
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src=https://www.googletagmanager.com/ns.html?id=GTM-KG7PVKB
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -166,80 +165,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <main id="content" class="container-xl">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/docs/">APIs & Documentation</a></li>
-            <li class="breadcrumb-item"><a href="/docs/wave/">Wave</a></li>
-            <li class="breadcrumb-item active">Data Download Guide</li>
+            <li class="breadcrumb-item active">Updating Embed Code for NLR.gov Widgets</li>
     </ol>
 
 
-        <div class="alert alert-warning d-flex align-items-center" role="alert">
-          <i class="fa-solid fa-triangle-exclamation bi flex-shrink-0 me-2"></i>
-          <p class="m-0 lh-sm">
-            <strong>Existing API Users:</strong> Update any <code>developer.nrel.gov</code> references in your code to <code>developer.nlr.gov</code> by <strong>April 30, 2026</strong>, to avoid service interruptions.
-              Learn more about the <a href="/docs/nlr-domain-transition/">domain transition</a>.
-          </p>
-        </div>
 
-      <h2 id="data-download-usage-guide">Data Download Usage Guide</h2>
+      <div class="alert alert-warning d-flex align-items-center" role="alert">
+  <i class="fa-solid fa-triangle-exclamation bi flex-shrink-0 me-2"></i>
+  <p class="m-0 lh-sm">
+    <strong>Website Owners:</strong> Update any <code>nrel.gov</code> references in your widget embed code to <code>nlr.gov</code> by <strong>May 29, 2026</strong>, to avoid service interruptions.
+  </p>
+</div>
 
-<p>We often receive requests from users interested in downloading larger segments of the data than are supported by the API. It is important to understand that these datasets are large. Currently our storage archive contains hundreds of terabytes of data and is constantly growing! In order to reliably serve dynamic segments of a dataset of this size to a growing community of users we have calculated the maximum capacity our server hardware can sustain. We use this physical capacity to determine our API rate limits.</p>
+<h1 id="updating-embed-code-for-nlrgov-widgets">Updating Embed Code for NLR.gov Widgets</h1>
 
-<p>The API is restricted in several ways including the number of simultaneous requests a single user can make, the number of requests a single user can make in a 24 hour period, as well as in the maximum size of a single request. The API rate limits are set at:</p>
+<p>The National Laboratory of the Rockies (NLR) is retiring the <code>nrel.gov</code> domain near the end of May and transitioning to the new <code>nlr.gov</code> domain.</p>
 
-<blockquote>
-  <p>2000 requests per day<br />
-1 request every 2 seconds<br />
-20 requests in process at once</p>
-</blockquote>
+<p><strong>To avoid an interruption in service, you need to update your widget embed code to use the new <code>nlr.gov</code> URLs by May 29, 2026.</strong> In your widget embed code, change <code>nrel.gov</code> to <code>nlr.gov</code> instead. All other aspects of the embed code remain the same.</p>
 
-<p>For downloading directly via CSV there are separate rate limits. This is due to the fact that it is only possible to download a single site for a single year via the CSV endpoint, therefor these requests are always quite small by comparison:</p>
+<p>To find new embed code, use the <a href="https://afdc.energy.gov/widgets">widgets page</a>. We will display a message at the top of widgets about this change for website owners who haven't updated their embed code starting on April 13, 2026.</p>
 
-<blockquote>
-  <p>10,000 requests per day<br />
-1 request per second<br />
-20 requests in process at once</p>
-</blockquote>
-
-<p>The size limit per each single request is determined by the number of total attributes in each request. The maximum weight of each request is <strong>175000100</strong>. The calculation for determining the weight of each request is:</p>
-
-<blockquote>
-  <p><em>site-count*attribute-count*year-count*data-intervals-per-year</em></p>
-</blockquote>
-
-<ul>
-  <li><strong>site-count</strong> is derived from the WKT value submitted and can be retrieved using the <a href="/docs/solar/nsrdb/site-count">site_count</a> API endpoint.</li>
-  <li><strong>attribute-count</strong> is equal to the number of attributes requested</li>
-  <li><strong>year-count</strong> is equal to the number of years requested</li>
-  <li><strong>data-intervals-per-year</strong> is <em>((60/interval)*24*365)</em> where interval is the interval requested</li>
-</ul>
-
-<p>To maximize a single request simply minimize the variables wherever possible. For example by requesting half as many attributes one can request twice as many years (or sites) worth of data.</p>
-
-<p>Imagine a use case where one wanted to download all wave data on the coast of Hawaii. The first step would be to refine the request down to the least number of attributes, years, and intervals possible. From that one could determine the number of sites that could be requested in a single request. By experimenting with the <a href="/docs/solar/nsrdb/site-count">site_count</a> endpoint a polygon size could be identified that intersects close to that many sites. Using that polygon size create a grid that covers all of the coastline of Hawaii. The final step would be to write a script that invokes the API once for every required grid cell at a rate of no more than 1 every 2 seconds and no more than 20 in process at a time. If more than 2000 requests are required the script will have to be continued across multiple days.</p>
-
-<p>In cases where a very large WKT value is required, e.g. downloading the maximum number of broadly spaced points at a time using a MULTIPOINT wkt, it is possible to POST a request to the API providing the WKT params in the payload. Here is an example of a Python script that uses this variation:</p>
-
-<div class="highlight"><pre class="highlight python"><code><span class="kn">import</span> <span class="nn">requests</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s">"https://developer.nlr.gov/api/wave/v2/wave/hawaii-hindcast-download.json?api_key=yourapikeygoeshere"</span>
-
-<span class="n">payload</span> <span class="o">=</span> <span class="s">"utc=true&amp;leap_day=true&amp;interval=180&amp;email=user@company.com&amp;wkt=POINT(-164 15)&amp;names=2010"</span>
-
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">'content-type'</span><span class="p">:</span> <span class="s">"application/x-www-form-urlencoded"</span><span class="p">,</span>
-    <span class="s">'cache-control'</span><span class="p">:</span> <span class="s">"no-cache"</span>
-<span class="p">}</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
-</code></pre></div>
-<p>And a CURL example of the same</p>
-
-<div class="highlight"><pre class="highlight shell"><code>curl <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2">"Content-Type: application/x-www-form-urlencoded"</span> <span class="nt">-H</span> <span class="s2">"Cache-Control: no-cache"</span> <span class="nt">-d</span> <span class="s1">'utc=true&amp;leap_day=true&amp;interval=180&amp;email=user@company.com&amp;wkt=POINT(-164 15)&amp;names=2010'</span> <span class="s2">"https://developer.nlr.gov/api/wave/v2/wave/hawaii-hindcast-download.json?api_key=yourapikeygoeshere"</span>
-</code></pre></div>
 
       <div style="text-align: center; font-style: italic; margin-top: 2rem;">
-  <a href="https://github.com/NatLabRockies/developer.nrel.gov/blob/main/source/docs/wave/guide.html.md.erb">Help improve this content</a>
+  <a href="https://github.com/NatLabRockies/developer.nrel.gov/blob/main/source/docs/widget-embed-code.html.md">Help improve this content</a>
 </div>
 
     </main>
